@@ -1,0 +1,45 @@
+{
+  "name": "neat-csv",
+  "version": "0.0.0",
+  "description": "Fast CSV parser",
+  "license": "MIT",
+  "repository": "sindresorhus/neat-csv",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "csv",
+    "comma",
+    "separated",
+    "values",
+    "tab",
+    "delimiter",
+    "separator",
+    "text",
+    "string",
+    "str",
+    "buffer",
+    "stream",
+    "parse",
+    "parser"
+  ],
+  "dependencies": {
+    "concat-stream": "^1.4.8",
+    "csv-parser": "^1.6.0",
+    "into-stream": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
+}
