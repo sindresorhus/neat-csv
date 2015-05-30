@@ -2,7 +2,7 @@
 
 > Fast CSV parser
 
-Convenience wrapper around he superfast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
+Convenience wrapper around the superfast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
 
 
 ## Install
