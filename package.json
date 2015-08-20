@@ -37,7 +37,7 @@
   "dependencies": {
     "concat-stream": "^1.4.8",
     "csv-parser": "^1.6.0",
-    "into-stream": "^1.0.0"
+    "into-stream": "^2.0.0"
   },
   "devDependencies": {
     "ava": "0.0.4"
