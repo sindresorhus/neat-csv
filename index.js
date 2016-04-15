@@ -1,21 +1,18 @@
 'use strict';
-var intoStream = require('into-stream');
-var csvParser = require('csv-parser');
-var concatStream = require('concat-stream');
+const intoStream = require('into-stream');
+const csvParser = require('csv-parser');
+const concatStream = require('concat-stream');
 
-module.exports = function (input, opts, cb) {
+module.exports = (input, opts) => {
+	opts = opts || {};
+
 	if (typeof input === 'string' || Buffer.isBuffer(input)) {
 		input = intoStream(input);
 	}
 
-	if (typeof opts !== 'object') {
-		cb = opts;
-		opts = {};
-	}
-
-	input
-	.pipe(csvParser(opts).on('error', cb))
-	.pipe(concatStream(function (data) {
-		cb(null, data);
-	}));
+	return new Promise((resolve, reject) => {
+		input
+			.pipe(csvParser(opts).on('error', reject))
+			.pipe(concatStream(resolve));
+	});
 };
