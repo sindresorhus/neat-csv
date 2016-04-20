@@ -1,34 +1,25 @@
-'use strict';
-var test = require('ava');
-var intoStream = require('into-stream');
-var neatCsv = require('./');
+import test from 'ava';
+import intoStream from 'into-stream';
+import fn from './';
 
-test('buffer', function (t) {
-	t.plan(3);
-
-	neatCsv(new Buffer('name,val\nfoo,1\nbar,2'), function (err, data) {
-		t.assert(!err, err);
-		t.assert(data[0].name === 'foo');
-		t.assert(data[1].name === 'bar');
-	});
+test('buffer', async t => {
+	const data = await fn(new Buffer('name,val\nfoo,1\nbar,2'));
+	t.is(data[0].name, 'foo');
+	t.is(data[1].name, 'bar');
 });
 
-test('string', function (t) {
-	t.plan(3);
-
-	neatCsv('name;val\nfoo;1\nbar;2', {separator: ';'}, function (err, data) {
-		t.assert(!err, err);
-		t.assert(data[0].name === 'foo');
-		t.assert(data[1].name === 'bar');
-	});
+test('string', async t => {
+	const data = await fn('name;val\nfoo;1\nbar;2', {separator: ';'});
+	t.is(data[0].name, 'foo');
+	t.is(data[1].name, 'bar');
 });
 
-test('stream', function (t) {
-	t.plan(3);
+test('stream', async t => {
+	const data = await fn(intoStream('name,val\nfoo,1\nbar,2'));
+	t.is(data[0].name, 'foo');
+	t.is(data[1].name, 'bar');
+});
 
-	neatCsv(intoStream('name,val\nfoo,1\nbar,2'), function (err, data) {
-		t.assert(!err, err);
-		t.assert(data[0].name === 'foo');
-		t.assert(data[1].name === 'bar');
-	});
+test('error', async t => {
+	t.throws(fn('name,val\nfoo,1,3\nbar,2', {strict: true}), /Row length does not match headers/);
 });
