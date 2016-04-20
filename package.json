@@ -19,6 +19,7 @@
     "index.js"
   ],
   "keywords": [
+    "parse",
     "csv",
     "comma",
     "separated",
@@ -31,7 +32,6 @@
     "str",
     "buffer",
     "stream",
-    "parse",
     "parser"
   ],
   "dependencies": {
