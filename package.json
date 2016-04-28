@@ -35,8 +35,8 @@
     "parser"
   ],
   "dependencies": {
-    "concat-stream": "^1.4.8",
     "csv-parser": "^1.6.0",
+    "get-stream": "^2.1.0",
     "into-stream": "^2.0.0"
   },
   "devDependencies": {
