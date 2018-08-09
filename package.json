@@ -1,49 +1,46 @@
 {
-  "name": "neat-csv",
-  "version": "2.1.0",
-  "description": "Fast CSV parser",
-  "license": "MIT",
-  "repository": "sindresorhus/neat-csv",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "parse",
-    "csv",
-    "comma",
-    "separated",
-    "values",
-    "tab",
-    "delimiter",
-    "separator",
-    "text",
-    "string",
-    "str",
-    "buffer",
-    "stream",
-    "parser"
-  ],
-  "dependencies": {
-    "csv-parser": "^1.6.0",
-    "get-stream": "^2.1.0",
-    "into-stream": "^2.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "esnext": true
-  }
+	"name": "neat-csv",
+	"version": "2.1.0",
+	"description": "Fast CSV parser",
+	"license": "MIT",
+	"repository": "sindresorhus/neat-csv",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"parse",
+		"csv",
+		"comma",
+		"separated",
+		"values",
+		"tab",
+		"delimiter",
+		"separator",
+		"text",
+		"string",
+		"str",
+		"buffer",
+		"stream",
+		"parser"
+	],
+	"dependencies": {
+		"csv-parser": "^1.12.1",
+		"get-stream": "^4.0.0",
+		"to-readable-stream": "^1.0.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"xo": "*"
+	}
 }

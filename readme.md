@@ -8,7 +8,7 @@ Convenience wrapper around the super-fast streaming [`csv-parser`](https://githu
 ## Install
 
 ```
-$ npm install --save neat-csv
+$ npm install neat-csv
 ```
 
 
@@ -18,10 +18,10 @@ $ npm install --save neat-csv
 const neatCsv = require('neat-csv');
 const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
-neatCsv(csv).then(data => {
-	console.log(data);
+(async () => {
+	console.log(await neatCsv(csv));
 	//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
-});
+})();
 ```
 
 
@@ -29,17 +29,17 @@ neatCsv(csv).then(data => {
 
 ### neatCsv(input, [options])
 
-Returns a promise for an array with the parsed CSV.
+Returns a `Promise<Object[]>` with the parsed CSV.
 
 #### input
 
-Type: `buffer`, `string`, `stream`
+Type: `string` `Buffer` `Stream`
 
 CSV to parse.
 
 #### options
 
-Type: `object`
+Type: `Object`
 
 See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#usage).
 
