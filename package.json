@@ -1,6 +1,6 @@
 {
 	"name": "neat-csv",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "Fast CSV parser",
 	"license": "MIT",
 	"repository": "sindresorhus/neat-csv",
@@ -35,7 +35,7 @@
 		"parser"
 	],
 	"dependencies": {
-		"csv-parser": "^1.12.1",
+		"csv-parser": "^2.0.0",
 		"get-stream": "^4.0.0",
 		"to-readable-stream": "^1.0.0"
 	},
