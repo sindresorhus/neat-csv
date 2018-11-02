@@ -41,7 +41,7 @@ CSV to parse.
 
 Type: `Object`
 
-See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#usage).
+See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#options).
 
 
 ## License

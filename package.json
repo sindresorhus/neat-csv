@@ -35,12 +35,12 @@
 		"parser"
 	],
 	"dependencies": {
-		"csv-parser": "^2.0.0",
-		"get-stream": "^4.0.0",
+		"csv-parser": "^2.1.0",
+		"get-stream": "^4.1.0",
 		"to-readable-stream": "^1.0.0"
 	},
 	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
+		"ava": "^0.25.0",
+		"xo": "^0.23.0"
 	}
 }
