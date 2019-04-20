@@ -3,10 +3,11 @@ const toReadableStream = require('to-readable-stream');
 const csvParser = require('csv-parser');
 const getStream = require('get-stream');
 
-module.exports = (input, options) => {
-	if (typeof input === 'string' || Buffer.isBuffer(input)) {
-		input = toReadableStream(input);
+module.exports = async (data, options) => {
+	if (typeof data === 'string' || Buffer.isBuffer(data)) {
+		data = toReadableStream(data);
 	}
 
-	return getStream.array(input.pipe(csvParser(options)));
+	// TODO: Use `stream.pipeline` here when targeting Node.js 10
+	return getStream.array(data.pipe(csvParser(options)));
 };

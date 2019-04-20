@@ -16,6 +16,7 @@ $ npm install neat-csv
 
 ```js
 const neatCsv = require('neat-csv');
+
 const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
 (async () => {
@@ -29,17 +30,17 @@ const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
 ### neatCsv(data, [options])
 
-Returns a `Promise<Object[]>` with the parsed CSV.
+Returns a `Promise<object[]>` with the parsed CSV.
 
 #### data
 
-Type: `string` `Buffer` `Stream`
+Type: `string | Buffer | stream.Readable`
 
 CSV data to parse.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#options).
 

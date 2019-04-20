@@ -21,5 +21,5 @@ test('stream', async t => {
 });
 
 test('error', async t => {
-	await t.throws(neatCsv('name,val\nfoo,1,3\nbar,2', {strict: true}), /Row length does not match headers/);
+	await t.throwsAsync(neatCsv('name,val\nfoo,1,3\nbar,2', {strict: true}), /Row length does not match headers/);
 });
