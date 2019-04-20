@@ -27,15 +27,15 @@ const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
 ## API
 
-### neatCsv(input, [options])
+### neatCsv(data, [options])
 
 Returns a `Promise<Object[]>` with the parsed CSV.
 
-#### input
+#### data
 
 Type: `string` `Buffer` `Stream`
 
-CSV to parse.
+CSV data to parse.
 
 #### options
 
