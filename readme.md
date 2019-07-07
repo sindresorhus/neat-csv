@@ -28,7 +28,7 @@ const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
 ## API
 
-### neatCsv(data, [options])
+### neatCsv(data, options?)
 
 Returns a `Promise<object[]>` with the parsed CSV.
 
@@ -42,9 +42,4 @@ CSV data to parse.
 
 Type: `object`
 
-See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#options).
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+See the [`csv-parser` options](https://github.com/mafintosh/csv-parser#options).

@@ -16,7 +16,7 @@ Fast CSV parser.
 Convenience wrapper around the super-fast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
 
 @param data - CSV data to parse.
-@param options - See the `csv-parser` [options](https://github.com/mafintosh/csv-parser#options).
+@param options - See the [`csv-parser` options](https://github.com/mafintosh/csv-parser#options).
 
 @example
 ```
