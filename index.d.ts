@@ -30,7 +30,7 @@ const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 })();
 ```
 */
-declare function neatCsv<Row = neatCsv.Row[]>(
+declare function neatCsv<Row = neatCsv.Row>(
 	data: string | Buffer | ReadableStream,
 	options?: neatCsv.Options
 ): Promise<Row[]>;
