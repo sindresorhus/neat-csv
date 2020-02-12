@@ -4,13 +4,11 @@
 
 Convenience wrapper around the super-fast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
 
-
 ## Install
 
 ```
 $ npm install neat-csv
 ```
-
 
 ## Usage
 
@@ -24,7 +22,6 @@ const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 	//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
 })();
 ```
-
 
 ## API
 
