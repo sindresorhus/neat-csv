@@ -4,6 +4,8 @@
 
 Convenience wrapper around the super-fast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
 
+Parsing-related issues should be reported to [`csv-parser`](https://github.com/mafintosh/csv-parser/issues).
+
 ## Install
 
 ```
