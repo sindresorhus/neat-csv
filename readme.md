@@ -1,4 +1,4 @@
-# neat-csv [![Build Status](https://travis-ci.org/sindresorhus/neat-csv.svg?branch=master)](https://travis-ci.org/sindresorhus/neat-csv)
+# neat-csv
 
 > Fast CSV parser
 

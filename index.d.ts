@@ -5,9 +5,7 @@ import {Options as CsvParserOptions} from 'csv-parser';
 declare namespace neatCsv {
 	type Options = CsvParserOptions;
 
-	interface Row {
-		[header: string]: string;
-	}
+	type Row = Record<string, string>;
 }
 
 /**
