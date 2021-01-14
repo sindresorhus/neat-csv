@@ -15,6 +15,12 @@ module.exports = async (data, options) => {
 	}
 
 	const parserStream = csvParser(options);
+
+	// Node.js 15.5 has a bug with `.pipeline` for large strings. It works fine in Node.js 14 and 12.
+	if (Number(process.versions.node.split('.')[0]) >= 15) {
+		return getStream.array(data.pipe(parserStream));
+	}
+
 	await pipelinePromise([data, parserStream]);
 	return getStream.array(parserStream);
 };
