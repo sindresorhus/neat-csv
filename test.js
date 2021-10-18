@@ -1,5 +1,6 @@
+import {Buffer} from 'node:buffer';
+import {Readable as ReadableStream} from 'node:stream';
 import test from 'ava';
-import toReadableStream from 'to-readable-stream';
 import neatCsv from './index.js';
 
 test('buffer', async t => {
@@ -15,13 +16,15 @@ test('string', async t => {
 });
 
 test('stream', async t => {
-	const data = await neatCsv(toReadableStream('name,val\nfoo,1\nbar,2'));
+	const data = await neatCsv(ReadableStream.from('name,val\nfoo,1\nbar,2'));
 	t.is(data[0].name, 'foo');
 	t.is(data[1].name, 'bar');
 });
 
 test('error', async t => {
-	await t.throwsAsync(neatCsv('name,val\nfoo,1,3\nbar,2', {strict: true}), /Row length does not match headers/);
+	await t.throwsAsync(neatCsv('name,val\nfoo,1,3\nbar,2', {strict: true}), {
+		message: /Row length does not match headers/,
+	});
 });
 
 const largeStringFixture = `provider_name,provider_id,url,mds_api_url,gbfs_api_url

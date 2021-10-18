@@ -1,13 +1,12 @@
+import {Buffer} from 'node:buffer';
+import fs from 'node:fs';
 import {expectType} from 'tsd';
-import * as fs from 'fs';
-import toReadableStream = require('to-readable-stream');
-import neatCsv = require('.');
+import neatCsv, {Options, Row} from './index.js';
 
-const options: neatCsv.Options = {};
+const options: Options = {}; // eslint-disable-line @typescript-eslint/no-unused-vars
 const csvText = 'type,part\nunicorn,horn\nrainbow,pink';
 
-expectType<Promise<neatCsv.Row[]>>(neatCsv(csvText));
-expectType<Promise<neatCsv.Row[]>>(neatCsv(Buffer.from(csvText)));
-expectType<Promise<neatCsv.Row[]>>(neatCsv(toReadableStream(csvText)));
-expectType<Promise<neatCsv.Row[]>>(neatCsv(fs.createReadStream('test.csv')));
-expectType<Promise<neatCsv.Row[]>>(neatCsv(csvText, {separator: ','}));
+expectType<Promise<Row[]>>(neatCsv(csvText));
+expectType<Promise<Row[]>>(neatCsv(Buffer.from(csvText)));
+expectType<Promise<Row[]>>(neatCsv(fs.createReadStream('test.csv')));
+expectType<Promise<Row[]>>(neatCsv(csvText, {separator: ','}));

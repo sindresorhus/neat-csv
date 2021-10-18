@@ -1,36 +1,30 @@
-/// <reference types="node"/>
-import {Readable as ReadableStream} from 'stream';
-import {Options as CsvParserOptions} from 'csv-parser';
+import {Buffer} from 'node:buffer';
+import {Readable as ReadableStream} from 'node:stream';
+import {Options} from 'csv-parser';
 
-declare namespace neatCsv {
-	type Options = CsvParserOptions;
-
-	type Row = Record<string, string>;
-}
+export type Row = Record<string, string>;
 
 /**
 Fast CSV parser.
 
 Convenience wrapper around the super-fast streaming [`csv-parser`](https://github.com/mafintosh/csv-parser) module. Use that one if you want streamed parsing.
 
-@param data - CSV data to parse.
+@param data - The CSV data to parse.
 @param options - See the [`csv-parser` options](https://github.com/mafintosh/csv-parser#options).
 
 @example
 ```
-import neatCsv = require('neat-csv');
+import neatCsv from 'neat-csv';
 
 const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
-(async () => {
-	console.log(await neatCsv(csv));
-	//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
-})();
+console.log(await neatCsv(csv));
+//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
 ```
 */
-declare function neatCsv<Row = neatCsv.Row>(
+export default function neatCsv<RowType = Row>(
 	data: string | Buffer | ReadableStream,
-	options?: neatCsv.Options
-): Promise<Row[]>;
+	options?: Options
+): Promise<RowType[]>;
 
-export = neatCsv;
+export {Options} from 'csv-parser';

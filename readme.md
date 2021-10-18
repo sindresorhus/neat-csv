@@ -8,21 +8,19 @@ Parsing-related issues should be reported to [`csv-parser`](https://github.com/m
 
 ## Install
 
-```
-$ npm install neat-csv
+```sh
+npm install neat-csv
 ```
 
 ## Usage
 
 ```js
-const neatCsv = require('neat-csv');
+import neatCsv from 'neat-csv';
 
 const csv = 'type,part\nunicorn,horn\nrainbow,pink';
 
-(async () => {
-	console.log(await neatCsv(csv));
-	//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
-})();
+console.log(await neatCsv(csv));
+//=> [{type: 'unicorn', part: 'horn'}, {type: 'rainbow', part: 'pink'}]
 ```
 
 ## API
@@ -35,7 +33,7 @@ Returns a `Promise<object[]>` with the parsed CSV.
 
 Type: `string | Buffer | stream.Readable`
 
-CSV data to parse.
+The CSV data to parse.
 
 #### options
 
