@@ -1,5 +1,5 @@
 import {Buffer} from 'node:buffer';
-import {Readable as ReadableStream} from 'node:stream';
+import {ReadableStream} from 'node:stream';
 import {Options} from 'csv-parser';
 
 export type Row = Record<string, string>;
